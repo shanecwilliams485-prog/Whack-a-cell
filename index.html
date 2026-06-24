@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#111827" />
+  <title>Whack-a-Cell</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-label="Whack-a-Cell game">
+    <section id="startScreen" class="overlay show">
+      <div class="panel">
+        <h1>Whack-a-Cell</h1>
+        <p class="version-tag">Effects Update v3 — countdown, burst, smoke, lose melody</p>
+        <p>Tap the overheating battery cells before they vent. Level up, move faster, and unlock Super Whack at level 5.</p>
+        <button id="startBtn" class="primary">Start Game</button>
+        <p class="tiny">Tip: turn your iPhone off silent mode for sound effects and Super Whack music.</p>
+      </div>
+    </section>
+
+    <section id="gameOverScreen" class="overlay">
+      <div class="panel danger-panel">
+        <h2 id="gameOverTitle">Thermal Runaway!</h2>
+        <p id="gameOverText">You lose pal.</p>
+        <button id="restartBtn" class="primary">Try Again</button>
+      </div>
+    </section>
+
+    <header class="hud">
+      <div><span class="label">Score</span><strong id="score">0</strong></div>
+      <div><span class="label">Level</span><strong id="level">1</strong></div>
+      <div><span class="label">Best</span><strong id="best">0</strong></div>
+    </header>
+
+    <section id="levelBanner" class="level-banner" aria-live="polite"></section>
+
+    <section class="board" id="board" aria-label="Battery cell holes">
+      <button class="hole" aria-label="Cell position 1"></button>
+      <button class="hole" aria-label="Cell position 2"></button>
+      <button class="hole" aria-label="Cell position 3"></button>
+      <button class="hole" aria-label="Cell position 4"></button>
+      <button class="hole" aria-label="Cell position 5"></button>
+      <button class="hole" aria-label="Cell position 6"></button>
+      <button class="hole" aria-label="Cell position 7"></button>
+      <button class="hole" aria-label="Cell position 8"></button>
+      <button class="hole" aria-label="Cell position 9"></button>
+      <button class="hole" aria-label="Cell position 10"></button>
+      <button class="hole" aria-label="Cell position 11"></button>
+      <button class="hole" aria-label="Cell position 12"></button>
+      <button class="hole" aria-label="Cell position 13"></button>
+      <button class="hole" aria-label="Cell position 14"></button>
+      <button class="hole" aria-label="Cell position 15"></button>
+      <button class="hole" aria-label="Cell position 16"></button>
+    </section>
+
+    <button id="superBtn" class="super" disabled>Super Whack<br><span id="superSub">Unlocks at Level 5</span></button>
+
+    <div id="countdown" class="countdown" aria-live="assertive"></div>
+    <div id="smoke" class="smoke" aria-hidden="true"></div>
+    <div id="finalLoseText" class="final-lose-text" aria-live="assertive">YOU LOSE PAL</div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
